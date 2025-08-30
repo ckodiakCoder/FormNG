@@ -1,22 +1,30 @@
-
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#d81f24ff] to-[#101E8A] px-2">
-  <div class="w-full max-w-2xl bg-[#f5f5f7] shadow-2xl rounded-3xl p-14 border border-gray-200 form-card">
-    <h2 class="text-4xl font-extrabold mb-10 text-[#1d1d1f] text-center tracking-tight drop-shadow-lg">User Information Form</h2>
+<div
+  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#d81f24ff] to-[#101E8A] px-2"
+>
+  <div
+    class="w-full max-w-2xl bg-[#f5f5f7] shadow-2xl rounded-3xl p-14 border border-gray-200 form-card"
+  >
+    <h2
+      class="text-4xl font-extrabold mb-10 text-[#1d1d1f] text-center tracking-tight drop-shadow-lg"
+    >
+      User Information Form
+    </h2>
     <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-8">
-
-      <formly-form 
-        [form]="form" 
-        [fields]="fields" 
-        [model]="model" 
-        class="text-[#1d1d1f] space-y-7"
+      <formly-form
+        [form]="form"
+        [fields]="fields"
+        [model]="model"
+        class="text-[#1d1d1f]"
       ></formly-form>
 
       <div *ngIf="form.invalid && (form.dirty || form.touched)" class="mt-2 text-red-600 text-base">
         <div *ngFor="let field of fields">
-          <div *ngIf="getFieldControl(field.key)?.invalid && (getFieldControl(field.key)?.dirty || getFieldControl(field.key)?.touched)">
+          <div
+            *ngIf="getFieldControl(field.key)?.invalid && (getFieldControl(field.key)?.dirty || getFieldControl(field.key)?.touched)"
+          >
             <div *ngFor="let errorKey of (getFieldErrors(field.key) | keyvalue)">
               <span *ngIf="field.templateOptions?.label">
-                {{ field.templateOptions?.label || 'Field' }}: 
+                {{ field.templateOptions?.label || 'Field' }}:
               </span>
               <span>
                 <ng-container [ngSwitch]="errorKey.key">
@@ -31,10 +39,10 @@
         </div>
       </div>
 
-      <button 
-        pButton 
-        type="submit" 
-        label="Submit" 
+      <button
+        pButton
+        type="submit"
+        label="Submit"
         class="w-full bg-white text-[#1d1d1f] font-bold py-4 rounded-2xl text-xl shadow-lg border border-[#1d1d1f] hover:bg-[#e5e5ea] hover:text-[#101E8A] transition-colors duration-200 button-elevated"
       ></button>
     </form>
