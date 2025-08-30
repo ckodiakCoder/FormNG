@@ -1,12 +1,24 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { importProvidersFrom } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyWrapperCard } from './formly-card.wrapper';
+import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
+import { InputTextModule } from 'primeng/inputtext';
+import { SelectModule } from 'primeng/select';
+import { ButtonModule } from 'primeng/button';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
-  ]
-};
+export const appProviders = importProvidersFrom(
+  BrowserAnimationsModule,
+  ReactiveFormsModule,
+  InputTextModule,
+  SelectModule,
+  ButtonModule,
+  FormlyModule.forRoot({
+    wrappers: [
+      { name: 'card', component: FormlyWrapperCard },
+      { name: 'form-field', component: FormlyWrapperCard },
+    ],
+  }),
+  FormlyPrimeNGModule
+);
