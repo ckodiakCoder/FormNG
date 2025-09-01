@@ -22,27 +22,27 @@ font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 
 
 //button style
-.button-elevated {
-font-size: 17px;
-line-height: 1.17648;
-font-weight: 400;
-letter-spacing: -.022em;
-font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-border-style: solid;
-border-width: 1px;
-min-width: 28px;
-padding-left: 21px;
-padding-right: 21px;
-padding-top: 11px;
-padding-bottom: 11px;
---sk-button-margin-horizontal: 18px;
---sk-button-margin-vertical: 18px;
-background: white; 
-color: var(--app-text);
-border-color: rgba(0,0,0,0.08);
-border-radius: 8px;
-cursor: pointer;
-}
+// .button-elevated {
+// font-size: 17px;
+// line-height: 1.17648;
+// font-weight: 400;
+// letter-spacing: -.022em;
+// font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+// border-style: solid;
+// border-width: 1px;
+// min-width: 28px;
+// padding-left: 21px;
+// padding-right: 21px;
+// padding-top: 11px;
+// padding-bottom: 11px;
+// --sk-button-margin-horizontal: 18px;
+// --sk-button-margin-vertical: 18px;
+// background: white; 
+// color: var(--app-text);
+// border-color: rgba(0,0,0,0.08);
+// border-radius: 8px;
+// cursor: pointer;
+// }
 
 
 .button-elevated:disabled {
